@@ -1,7 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_app_bar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:t_store/features/shop/screens/home/widgets/t_promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -13,6 +15,7 @@ import '../../../../common/widgets/custom_shapes/containers/search_container.dar
 import '../../../../common/widgets/custom_shapes/curved_edges/curved_edges.dart';
 import '../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
+import '../../../../common/widgets/images/t_rounded_images.dart';
 import '../../../../common/widgets/products_cart/cart_menu_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
@@ -29,7 +32,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            PrimaryHeaderContainer(
+            const PrimaryHeaderContainer(
               child: Column(
                 children: [
                   ///AppBar
@@ -38,21 +41,19 @@ class Home extends StatelessWidget {
 
                   ///SearchBar
                   SearchContainer(text: 'Search in Store', icon: Iconsax.search_normal,),
-                  const SizedBox(height: TSizes.spaceBtwSections,),
+                  SizedBox(height: TSizes.spaceBtwSections,),
 
                   ///Popular Categories Scrollable
                   Padding(
-                      padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                      padding: EdgeInsets.only(left: TSizes.defaultSpace),
                       child: Column(
                          children: [
                            ///Heading
                            SectionHeading(title: 'Popular Categories', showActionButton: false, textColor: TColors.white,),
-                           const SizedBox(height: TSizes.spaceBtwItems,),
+                           SizedBox(height: TSizes.spaceBtwItems,),
 
                            ///Categories
                            HomeCategories()
-
-
 
                          ],
                   )
@@ -61,12 +62,22 @@ class Home extends StatelessWidget {
                 ]
               ),
             ),
+
+            /// Body
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: const TPromoSlider(
+                banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],
+              )
+            )
           ],
         ),
       ),
     );
   }
 }
+
+
 
 
 

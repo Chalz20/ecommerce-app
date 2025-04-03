@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../../../utils/constants/colors.dart';
 
-class CircularContainer extends StatelessWidget {
-  const CircularContainer({
+class TCircularContainer extends StatelessWidget {
+  const TCircularContainer({
     super.key,
     this.width = 400,
     this.height = 400,
     this.radius = 400,
+    this.margin,
     this.backgroundColor = TColors.white,
     this.padding = 0,
     this.child,
@@ -15,6 +16,7 @@ class CircularContainer extends StatelessWidget {
   final double? width;
   final double? height;
   final double radius;
+  final EdgeInsets? margin;
   final Color backgroundColor;
   final double padding;
   final Widget? child;
@@ -22,12 +24,13 @@ class CircularContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 400,
-        height: 400,
+        width: width,
+        height: height,
         padding: const EdgeInsets.all(0),
+        margin: margin,
         decoration: BoxDecoration(
-            color: TColors.textWhite.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(400)
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(radius)
         )
 
     );

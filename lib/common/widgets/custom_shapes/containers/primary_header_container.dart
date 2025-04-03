@@ -20,8 +20,8 @@ class PrimaryHeaderContainer extends StatelessWidget {
           child: Stack(
             ///Background circular shapes
               children: [
-                Positioned(top: -150, right: -250, child: CircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1))),
-                CircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1)),
+                Positioned(top: -150, right: -250, child: TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1))),
+                TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1)),
                 child
               ]
           )
