@@ -16,6 +16,7 @@ import '../../../../common/widgets/custom_shapes/curved_edges/curved_edges.dart'
 import '../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widgets/images/t_rounded_images.dart';
+import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../common/widgets/products_cart/cart_menu_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
@@ -66,8 +67,20 @@ class Home extends StatelessWidget {
             /// Body
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: const TPromoSlider(
-                banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],
+
+
+              child: Column(
+                children: [
+                  ///Promotion Carousel
+                  const TPromoSlider(
+                    banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],
+                  ),
+
+                  SizedBox(height: TSizes.spaceBtwSections,),
+
+                  ///Popular Products
+                  ProductCardVertical(),
+                ],
               )
             )
           ],
