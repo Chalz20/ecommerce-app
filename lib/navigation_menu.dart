@@ -6,6 +6,7 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import 'features/shop/screens/home/home.dart';
+import 'features/shop/screens/store/store.dart';
 
 
 class NavigationMenu extends StatelessWidget {
@@ -44,5 +45,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int>selectedIndex = 0.obs;
 
-  final screens = [ const Home(), Container(color: Colors.green,), Container(color: Colors.blue,), Container(color: Colors.yellow,)];
+  final screens = [ const Home(), const StoreScreen(), Container(color: Colors.blue,), Container(color: Colors.yellow,)];
 }

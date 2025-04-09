@@ -5,7 +5,7 @@ import '../../utils/constants/colors.dart';
 class TShadowStyle {
   static final verticalProductShadow = BoxShadow(
     color: TColors.darkGrey.withOpacity(0.1),
-    spreadRadius: 50,
+    spreadRadius: 10,
     blurRadius: 7,
     offset: const Offset(0, 2), // changes position of shadow
   );

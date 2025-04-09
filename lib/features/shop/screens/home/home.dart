@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_app_bar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:t_store/features/shop/screens/home/widgets/t_promo_slider.dart';
@@ -29,11 +30,11 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return   Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const PrimaryHeaderContainer(
+            PrimaryHeaderContainer(
               child: Column(
                 children: [
                   ///AppBar
@@ -75,11 +76,13 @@ class Home extends StatelessWidget {
                   const TPromoSlider(
                     banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],
                   ),
+                  const SizedBox(height: TSizes.spaceBtwSections,),
 
-                  SizedBox(height: TSizes.spaceBtwSections,),
+                  ///Heading
+                  const SectionHeading(title: 'Popular Products',),
 
                   ///Popular Products
-                  ProductCardVertical(),
+                  GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCardVertical())
                 ],
               )
             )

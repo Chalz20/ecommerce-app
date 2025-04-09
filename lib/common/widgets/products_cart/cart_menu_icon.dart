@@ -5,17 +5,17 @@ import '../../../utils/constants/colors.dart';
 
 class CounterIcon extends StatelessWidget {
   const CounterIcon({
-    super.key, required this.iconColor, required this.onPressed,
+    super.key, this.iconColor, required this.onPressed,
   });
 
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        IconButton(onPressed: () {}, icon: const Icon(Iconsax.shopping_bag), color: TColors.white,),
+        IconButton(onPressed: () {}, icon: const Icon(Iconsax.shopping_bag), color: iconColor,),
         Positioned(
           right: 0,
           child: Container(
