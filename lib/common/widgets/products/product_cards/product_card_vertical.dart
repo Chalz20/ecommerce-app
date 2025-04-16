@@ -10,6 +10,7 @@ import '../../../../utils/constants/sizes.dart';
 import '../../../styles/shadows.dart';
 import '../../icons/circular_icon.dart';
 import '../../images/t_rounded_images.dart';
+import '../../texts/brand_title_with_verified_icon.dart';
 import '../../texts/product_price_text.dart';
 
 class ProductCardVertical extends StatelessWidget {
@@ -74,17 +75,8 @@ class ProductCardVertical extends StatelessWidget {
                   children: [
                       const ProductTitleText(title: 'Green Nike shoes' , smallSize: true,),
                       const SizedBox(height: TSizes.spaceBtwItems/2),
-                      Row(
-                        children: [
-                          Text(
-                            'Nike',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.labelMedium,
-                          ),
-                          const SizedBox(height: TSizes.xs),
-                          const Icon( Iconsax.verify5, color: TColors.primary, size: TSizes.iconXs),
-                        ],
+                      BrandTitleWithVerifiedIcon(
+                        title: 'Nike',
                       ),
 
 
@@ -126,5 +118,7 @@ class ProductCardVertical extends StatelessWidget {
     );
   }
 }
+
+
 
 
