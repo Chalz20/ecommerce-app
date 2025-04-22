@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/authentication/screens/password_configuration/reset_password.dart';
-import 'package:t_store/utils/constants/enums.dart';
 
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
@@ -16,7 +14,7 @@ class ForgetPassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body:  Padding(
-        padding: EdgeInsets.all(TSizes.defaultSpace),
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

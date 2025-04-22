@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/appbar/tab_bar.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/common/widgets/products_cart/cart_menu_icon.dart';
-import 'package:t_store/common/widgets/texts/brand_title_text.dart';
-import 'package:t_store/common/widgets/texts/brand_title_with_verified_icon.dart';
-import 'package:t_store/utils/constants/enums.dart';
+import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-import '../../../../common/brands/brand_show_case.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
-import '../../../../common/widgets/images/circular_image.dart';
 import '../../../../common/brands/brand_card.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -84,23 +78,13 @@ class StoreScreen extends StatelessWidget {
           },
 
               ///Body
-              body: TabBarView(
+              body: const TabBarView(
                 children: [
-                  Padding(
-                      padding: const EdgeInsets.all(TSizes.defaultSpace),
-                      child: Column(
-                        children: [
-                          ///Brands
-                          BrandShowcase(
-                            images: [
-                              TImages.productImage1,
-                              TImages.productImage2,
-                              TImages.productImage3,
-                            ],
-                          )
-                        ],
-                      ),
-                  )
+                  CategoryTab(),
+                  CategoryTab(),
+                  CategoryTab(),
+                  CategoryTab(),
+                  CategoryTab(),
                 ],
 
               )

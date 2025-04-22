@@ -21,7 +21,7 @@ class SignupScreen extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.all( TSizes.defaultSpace),
+            padding: const EdgeInsets.all( TSizes.defaultSpace),
             child: Column(
               children: [
                 ///Title
@@ -140,7 +140,7 @@ class SignupScreen extends StatelessWidget {
                             ),
                             Text.rich(
                                 TextSpan(
-                                  text: '${TTexts.termsOfUse}',
+                                  text: TTexts.termsOfUse,
                                   style: Theme.of(context).textTheme.bodyMedium!.apply(
                                     color: dark ? TColors.white : TColors.primary,
                                     decoration: TextDecoration.underline,

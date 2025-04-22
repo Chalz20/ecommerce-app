@@ -6,10 +6,13 @@ import 'circular_container.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {
   const PrimaryHeaderContainer({
-    super.key, required this.child,
+    super.key,
+    required this.child,
+    this.height,
   });
 
   final Widget child;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +23,18 @@ class PrimaryHeaderContainer extends StatelessWidget {
           child: Stack(
             ///Background circular shapes
               children: [
-                Positioned(top: -150, right: -250, child: TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1))),
-                TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1)),
+                Positioned(
+                    top: -150,
+                    right: -250,
+                    child: TCircularContainer(
+                        height: height,
+                        backgroundColor: TColors.textWhite.withOpacity(0.1)
+                    )
+                ),
+                TCircularContainer(
+                    height: height,
+                    backgroundColor: TColors.textWhite.withOpacity(0.1)
+                ),
                 child
               ]
           )
