@@ -7,7 +7,7 @@ import 'package:t_store/features/authentication/screens/onboarding/widgets/onboa
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 
-import '../../../../features/authentication/controllers/onboarding_controller.dart';
+import '../../controllers/onboarding/onboarding_controller.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
