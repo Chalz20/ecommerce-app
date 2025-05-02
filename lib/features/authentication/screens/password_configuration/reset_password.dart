@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:t_store/features/authentication/controllers/forget_password/forget_password_controller.dart';
+import 'package:t_store/features/authentication/screens/login/login.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
 class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+  const ResetPassword({
+    super.key,
+    required this.email
+  });
+  final String email;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +39,7 @@ class ResetPassword extends StatelessWidget {
 
                 ///Title and subtitle
                 Text(
-                  TTexts.changeYourPasswordTitle,
+                  email,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -51,12 +57,18 @@ class ResetPassword extends StatelessWidget {
                 SizedBox(
                     width: double.infinity ,
                     child: ElevatedButton(
-                        onPressed: () => Get.to(() => const ResetPassword()) ,
+                        onPressed: () => Get.offAll(() => const LoginScreen()) ,
                         child: const Text(TTexts.done)
                     )
                 ),
                 const SizedBox(height: TSizes.spaceBtwItems),
-                SizedBox( width: double.infinity , child: TextButton(onPressed: () {} , child: const Text(TTexts.resendEmail))),
+                SizedBox(
+                    width: double.infinity ,
+                    child: TextButton(
+                        onPressed: () => ForgetPasswordController.instance.resendResetPasswordEmail(email) ,
+                        child: const Text(TTexts.resendEmail)
+                    )
+                ),
 
               ],
             ),
